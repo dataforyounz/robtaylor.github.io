@@ -1,0 +1,29 @@
+name: "my-website"
+navbar:
+  title: "Rob Taylor"
+  type: default
+  left:
+    - text: "Publications"
+      href: publications.html
+    #- text: "Publications"
+     # href: publications.html
+    - text: "Blog"
+      href: blog.html
+    - text: "Shiny"
+      menu:
+        - text: "Dash 1"
+        - text: "Dash 2"
+        - text: "--------"
+        - text: "Dash 3"
+    - text: "About"
+      href: about.html
+  right:
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/dataforyou/
+    - icon: fa-github fa-lg
+      href: https://github.com/dataforyounz
+    - icon: fa-twitter fa-lg
+      href: https://twitter.com/dataforyounz
+output:
+  html_document:
+    theme: darkly
