@@ -4,8 +4,6 @@ title: "Publications"
 
 ***
 
-#### Preprints
-
 #### 2022
 
 <span class = "text-success">Taylor, R.</span>, Tomić, I., Aagten-Murphy, D., & Bays, P. M. (2022). Working memory is updated by reallocation of resources from obsolete to new items. *Attention, Perception, & Psychophysics*, 1-15 ([pdf](https://link.springer.com/article/10.3758/s13414-022-02584-2))
