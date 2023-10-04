@@ -1,6 +1,7 @@
 name: "my-website"
+output_dir: docs
 navbar:
-  title: "Rob Taylor"
+  title: "Rob Taylor, PhD"
   type: default
   left:
     - text: "Publications"
