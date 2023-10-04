@@ -26,4 +26,4 @@ navbar:
       href: https://twitter.com/dataforyounz
 output:
   html_document:
-    theme: darkly
+    theme: flatly
