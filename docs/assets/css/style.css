@@ -24,7 +24,7 @@
   content: "";
   position: absolute;
   width: 3px;
-  background-color: #bbb;
+  background-color: #158cba;
   top: 0;
   bottom: 0;
   left: 50%;
@@ -45,7 +45,7 @@
   width: 25px;
   height: 25px;
   right: -11px;
-  background-color: #bbb;
+  background-color: #158cba;
   top: 15px;
   border-radius: 50%;
   z-index: 1;
