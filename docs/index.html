@@ -1,365 +1,316 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-
-
-
-
-<title>index.knit</title>
-
-<script src="site_libs/header-attrs-2.23/header-attrs.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-
-
-
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
-</style>
-
-
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-
-
-
+  <title>Personal Website</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.1/dist/cosmo/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+  <link href="assets/fontawesome/css/brands.css" rel="stylesheet">
+  <link href="assets/fontawesome/css/solid.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
-<body>
-
-
-<div class="container-fluid main-container">
-
-
-
-
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+<body class="d-flex flex-column min-vh-100">
+  
+   <!---------------------------- NAVBAR -----------------------------  ----------->
+<nav id = "navbar" class="navbar navbar-expand-lg bg-dark fixed-top" data-bs-theme="dark">
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Rob Taylor, PhD</a>
+    <a class="navbar-brand" href="#">robtaylor.nz</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#news">News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#experience">Experience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </li>
+      </ul>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li>
-  <a href="publications.html">Publications</a>
-</li>
-<li>
-  <a href="blog.html">Blog</a>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Shiny
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li class="dropdown-header">Dash 1</li>
-    <li class="dropdown-header">Dash 2</li>
-    <li class="divider"></li>
-    <li class="dropdown-header">Dash 3</li>
+  </div>
+</nav>
+  
+  <!---------------------------- LANDING ---------------------------------------->
+  
+  <section id="home" class="section-height">
+    <div class="container-fluid">
+      <div class="container vertical-center">
+        <div class = "row">
+          <div class = "col-md-6">
+            <img src="assets/img/me.jpeg" class="img-circle" alt="Profile Picture" width = 150 >
+  <h3 class="text-primary">Rob Taylor, PhD</h3>
+  <hr class="horiz-line">
+  <ul class="list-inline">
+            <li class="list-inline-item"><a href="https://twitter.com/dataforyounz"><i class="fab fa-twitter fa-large icon-landing"></i></a></li>
+            <li class="list-inline-item"><a href=""><i class="fab fa-github"></i>
+              </a></li>
+            <li class="list-inline-item"><a href=""><i class="fab fa-linkedin"></i></a></li>
   </ul>
-</li>
-<li>
-  <a href="about.html">About</a>
-</li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://www.linkedin.com/in/dataforyou/">
-    <span class="fa fa-linkedin fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="https://github.com/dataforyounz">
-    <span class="fa fa-github fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="https://twitter.com/dataforyounz">
-    <span class="fa fa-twitter fa-lg"></span>
-     
-  </a>
-</li>
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
-</div><!--/.navbar -->
-
-<div id="header">
-
-
-
-
 </div>
+<div class = "col-md-6">
 
+Hi!
 
-<div class="container">
-<hr>
-<div class="row">
-<div class="col-md-2">
-<p><img src="me.jpeg" class="img-circle" alt="Profile Picture" width = 150 ></p>
-</div>
-<div class="col-md-10">
-<p>Hi!</p>
-<p>My name is Rob and I’m a data scientist based in Wellington, New
-Zealand.</p>
-<p>Since returning to New Zelaand in 2019 I have worked in the public
-sector as a data scientist. Much of my work has centered on creating
-data pipelines and products for decision-makers and researchers.</p>
+My name is Rob and I\'m an independent researcher based in Wellington, New Zealand. 
+
 </div>
 </div>
 </div>
+    </div>
 
+</section>
 
+<!---------------------------- NEWS ---------------------------------------->
 
+<section id="news" class="bg-light section-height">
+  
+  <div class="container-fluid">
+      <div class="container align-top">
+        <h3>Latest News</h3>
+        <hr>
+        
+         <!-- BEGIN CARDS --->
+        <div class="row">
+          <div class="col col-sm-12">
+            <div class="card bg-light">
+               <div class="card-header bg-dark text-white">
+                3 October 2023
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">New Website!</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <br>
+        
+         <div class="row">
+          <div class="col col-sm-12">
+            <div class="card bg-light">
+               <div class="card-header bg-dark text-white">
+                1 October 2023
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">I'm a maniac! Maniac!</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <br> 
+        
+        <div class="row">
+          <div class="col col-sm-12">
+            <div class="card bg-light">
+               <div class="card-header bg-dark text-white">
+                1 November 2022
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Science, bitch!</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <br>
+        <!-- END CARDS --->
+        
+       </div>
+    </div>
 
-</div>
+</section>
 
-<script>
+<!---------------------------- EXPERIENCE ---------------------------------------->
 
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
+<section id="experience" class="section-height bg-dark">
+  
+  <div class="container-fluid">
+      <div class="container align-top">
+        <h3 class="text-light">Experience</h3>
+        <p class="text-light">Qualification are PhD (Psychology), MA (Psychology)</p>
+        <hr style="color: white;">
+        <br>
+        <br>
+        
+        <div class="main-timeline-4 text-white">
+          <div class="timeline-4 left-4">
+            <div class="card">
+              <div class="card-header bg-dark text-white">
+                October 2023 - Present
+              </div>
+              <div class="card-body bg-light">
+                <h5 class="card-title">Independent Researcher</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Wellington, New Zealand</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <div class="main-timeline-4 text-white">
+          <div class="timeline-4 right-4">
+            <div class="card">
+              <div class="card-header bg-dark text-white">
+                November 2018 - August 2019
+              </div>
+              <div class="card-body bg-light">
+                <h5 class="card-title">Postdoctoral Research Fellow</h5>
+                <h6 class="card-subtitle mb-2 text-muted">University of Newcastle, Newcastle, Australia</h6>
+                <h6 class="badge rounded-pill bg-info text-white mb-0">Psychophysics</h6>
+                <h6 class="badge rounded-pill bg-info text-white mb-0">Visual Working Memory</h6>
+                <h6 class="badge rounded-pill bg-info text-white mb-0">Computational Neuroscience</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="main-timeline-4 text-white">
+          <div class="timeline-4 left-4">
+            <div class="card">
+              <div class="card-header bg-dark text-white">
+                January 2017 - November 2018
+              </div>
+              <div class="card-body bg-light">
+                <h5 class="card-title">Postdoctoral Research Fellow</h5>
+                <h6 class="card-subtitle mb-2 text-muted">University of Cambridge, Cambridge, United Kingdom</h6>
+                <h6 class="badge rounded-pill bg-info text-white mb-0">Psychophysics</h6>
+                <h6 class="badge rounded-pill bg-info text-white mb-0">Visual Working Memory</h6>
+                <h6 class="badge rounded-pill bg-info text-white mb-0">Computational Neuroscience</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="main-timeline-4 text-white">
+          <div class="timeline-4 right-4">
+            <div class="card">
+              <div class="card-header bg-dark text-white">
+                August 2014 - January 2017
+              </div>
+              <div class="card-body bg-light">
+                <h5 class="card-title">Postdoctoral Research Fellow</h5>
+                <h6 class="card-subtitle mb-2 text-muted">UNSW, Sydney, Australia</h6>
+                <h6 class="badge rounded-pill bg-info text-white mb-0">Psychophysics</h6>
+                <h6 class="badge rounded-pill bg-info text-white mb-0">Visual Working Memory</h6>
+                <h6 class="badge rounded-pill bg-info text-white mb-0">Computational Modelling</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="main-timeline-4 text-white">
+          <div class="timeline-4 left-4">
+            <div class="card">
+              <div class="card-header bg-dark text-white">
+                January 2012 - November 2015
+              </div>
+              <div class="card-body bg-light">
+                <h5 class="card-title">PhD Candidate</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Massey University, Palmerston North, New Zealand</h6>
+                <h6 class="badge rounded-pill bg-info text-white mb-0">Psychophysics</h6>
+                <h6 class="badge rounded-pill bg-info text-white mb-0">Computational Modelling</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+         
+      <br>   
+     </div>
+  </div>
+</section>
 
+<section id="contact" class="bg-light section-height">
+  
+  <div class="container-fluid">
+      <div class="container align-top">
+        <h3>Contact</h3>
+        <hr>
+        
+        
+       </div>
+    </div>
 
-</script>
+</section>
+  
+ <!---------------------------- FOOTER ---------------------------------------->
+<footer class="bg-dark text-center text-white mt-auto">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
 
-<!-- tabsets -->
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
 
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
 
-<!-- code folding -->
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
 
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Rob Taylor
+  </div>
+  <!-- Copyright -->
+</footer>
+
 
 </body>
-</html>
